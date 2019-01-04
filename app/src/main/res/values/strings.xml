@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">2019个税工具</string>
+    <string name="navigation_drawer_open">打开抽屉</string>
+    <string name="navigation_drawer_close">关闭抽屉</string>
+    <string name="nav_header_title">2019个税工具</string>
+    <string name="nav_header_subtitle">sunji.life@qq.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Navigation header</string>
+
+    <string name="about">个税计算工具是根据2019年个人所得税税制进行编写。2019年1月开始，综合与分类相结合的个人所得税制将正式实施。
+        本工具根据税制计算出每个月预扣税额和总税额额度，结果仅供参考。
+    其中关于大病医疗扣除方式，作者暂不明确，后续根据需要再加入。另外由于附加项未提到年终奖之类扣除说明，因此本工具对于年终奖不适用。</string>
+    <string name="contact_me">
+        电子科技大学2018MBA 9班\nemail:sunji.life@qq.com\nqq:779408826</string>
+</resources>
