@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity
     private void share() {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "欢迎使用2019个税计算工具.下载请访问:https://github.com/sunjilife/taxRevenue");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "欢迎使用2019个税计算工具.源码已分享到:https://github.com/sunjilife/taxRevenue\n\n" +
+                "app下载地址:\nhttps://github.com/sunjilife/taxRevenue/blob/master/app/release/app-release.apk");
         sendIntent.putExtra(Intent.EXTRA_TITLE, "2019新个税工具");
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent, "分享"));
@@ -169,4 +171,19 @@ public class MainActivity extends AppCompatActivity
         startActivity(new Intent(this, TaxInfoActivity.class).putExtra("data", taxCost));
     }
 
+    private long exitTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(this, "再按一次退出App", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
