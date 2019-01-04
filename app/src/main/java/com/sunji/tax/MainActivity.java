@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity
     private void share() {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "欢迎使用2019个税计算工具.下载请访问:https://github.com/sunjilife/taxRevenue");
+        sendIntent.putExtra(Intent.EXTRA_TITLE, "2019新个税工具");
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent, "分享"));
     }

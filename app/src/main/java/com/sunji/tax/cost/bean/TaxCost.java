@@ -1,5 +1,6 @@
 package com.sunji.tax.cost.bean;
 
+import com.sunji.tax.cost.Tax;
 import com.sunji.tax.cost.util.MoneyUtil;
 
 import java.io.Serializable;
@@ -51,13 +52,17 @@ public class TaxCost implements Serializable {
         StringBuilder builder = new StringBuilder("");
         if (totalSalary != null) {
             builder.append("您的总收入:" + totalSalary.toString() + "\n\n");
+            if (totalSalary.floatValue() < Tax.YEAR_THRESHOLD_MONEY) {
+                builder.append("\n未达到扣税标准，您不需要交税\n");
+                return builder.toString();
+            }
         }
 
         if (allMonth != null && allMonth.size() > 0) {
             for (int i = 0; i < allMonth.size(); i++) {
                 BigDecimal bigDecimal = allMonth.get(i);
                 if (!MoneyUtil.isNull(bigDecimal)) {
-                    String s = String.format("第%d个月预扣金额为:%f\n", i+1, bigDecimal.floatValue());
+                    String s = String.format("第%d个月预扣金额为:%f\n", i + 1, bigDecimal.floatValue());
                     builder.append(s);
                 }
             }

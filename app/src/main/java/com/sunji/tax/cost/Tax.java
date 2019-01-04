@@ -21,11 +21,11 @@ public class Tax implements TaxInterface {
     /**
      * 达到扣个税的门槛金额-月份
      */
-    public final float MONTH_THRESHOLD_MONEY = 5000;
+    public static final float MONTH_THRESHOLD_MONEY = 5000;
     /**
      * 达到扣个税的金额门槛-年度
      */
-    public final float YEAR_THRESHOLD_MONEY = 60000;
+    public static final float YEAR_THRESHOLD_MONEY = 60000;
 
     /**
      * 对应的累计金额税率

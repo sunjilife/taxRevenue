@@ -11,5 +11,7 @@
         本工具根据税制计算出每个月预扣税额和总税额额度，结果仅供参考。
     其中关于大病医疗扣除方式，作者暂不明确，后续根据需要再加入。另外由于附加项未提到年终奖之类扣除说明，因此本工具对于年终奖不适用。</string>
     <string name="contact_me">
-        电子科技大学2018MBA 9班\nemail:sunji.life@qq.com\nqq:779408826</string>
+        电子科技大学2018MBA \nemail:sunji.life@qq.com\nqq:779408826</string>
+
+    <string name="desc">源码地址:https://github.com/sunjilife/taxRevenue</string>
 </resources>
